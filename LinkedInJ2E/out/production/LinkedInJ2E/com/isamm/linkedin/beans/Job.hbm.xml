@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.isamm.linkedin.beans.Job" table="job" schema="jee">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="descOffre">
+            <column name="desc_offre" sql-type="text"/>
+        </property>
+        <property name="hashtag1">
+            <column name="hashtag1" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="hashtag2">
+            <column name="hashtag2" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="hashtag3">
+            <column name="hashtag3" sql-type="varchar(50)" length="50"/>
+        </property>
+        <property name="nomOffre">
+            <column name="nom_offre" sql-type="varchar(300)" length="300"/>
+        </property>
+        <property name="idRecruteur">
+            <column name="id_recruteur" sql-type="int(11)"/>
+        </property>
+        <property name="date">
+            <column name="date" sql-type="datetime"/>
+        </property>
+        <property name="place">
+            <column name="place" sql-type="varchar(100)" length="100"/>
+        </property>
+        <property name="price">
+            <column name="price" sql-type="varchar(10)" length="10"/>
+        </property>
+    </class>
+</hibernate-mapping>

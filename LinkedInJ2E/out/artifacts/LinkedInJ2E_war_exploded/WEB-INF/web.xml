@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <!--suppress ServletWithoutMappingInspection -->
+        <servlet-name>DashboardServlet</servlet-name>
+        <servlet-class>com.isamm.linkedin.Servlets.dashboard.DashboardServlet</servlet-class>
+        <multipart-config>
+            <location>C:\Users\ASUS\IdeaProjects\j2ee\LinkedInJ2E\web\public\file</location>
+            <max-file-size>10485760</max-file-size> <!-- 10 Mo -->
+            <max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo -->
+            <file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo -->
+        </multipart-config>
+    </servlet>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <filter>
+        <filter-name>RequestLoggingFilter</filter-name>
+        <filter-class>com.isamm.linkedin.filter.RequestLoggingFilter</filter-class>
+    </filter>
+
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>com.isamm.linkedin.filter.AuthenticationFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>RequestLoggingFilter</filter-name>
+        <url-pattern>/dashboard</url-pattern>
+        <url-pattern>/networks</url-pattern>
+        <url-pattern>/messages</url-pattern>
+        <url-pattern>/jobs</url-pattern>
+        <url-pattern>/edit</url-pattern>
+        <url-pattern>/profile/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/public/*</url-pattern>
+        <url-pattern>/login</url-pattern>
+        <url-pattern>/register</url-pattern>
+    </filter-mapping>
+
+
+</web-app>
+

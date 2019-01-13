@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.isamm.linkedin.beans.Publication" table="publication" schema="jee">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="contenu">
+            <column name="contenu" sql-type="varchar(200)" length="200"/>
+        </property>
+        <property name="date">
+            <column name="date" sql-type="datetime"/>
+        </property>
+        <property name="idUtilisateur">
+            <column name="id_utilisateur" sql-type="int(11)"/>
+        </property>
+        <property name="image">
+            <column name="image" sql-type="varchar(500)" length="500" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

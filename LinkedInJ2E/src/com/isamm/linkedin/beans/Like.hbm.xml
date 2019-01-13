@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.isamm.linkedin.beans.Like" table="like" schema="jee">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="date">
+            <column name="date" sql-type="datetime"/>
+        </property>
+        <property name="idPublication">
+            <column name="id_publication" sql-type="int(11)"/>
+        </property>
+        <property name="idUtilisateur">
+            <column name="id_utilisateur" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>

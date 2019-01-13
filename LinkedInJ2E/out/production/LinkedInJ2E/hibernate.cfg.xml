@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jee</property>
+  <property name="hibernate.connection.username">root</property>
+
+
+  <mapping class="com.isamm.linkedin.beans.Commentaire"/>
+  <mapping class="com.isamm.linkedin.beans.Friends"/>
+  <mapping resource="com/isamm/linkedin/beans/Friends.hbm.xml"/>
+  <mapping class="com.isamm.linkedin.beans.Job"/>
+  <mapping resource="com/isamm/linkedin/beans/Job.hbm.xml"/>
+  <mapping class="com.isamm.linkedin.beans.Jobpostulation"/>
+  <mapping resource="com/isamm/linkedin/beans/Jobpostulation.hbm.xml"/>
+  <mapping class="com.isamm.linkedin.beans.Like"/>
+  <mapping resource="com/isamm/linkedin/beans/Like.hbm.xml"/>
+  <mapping class="com.isamm.linkedin.beans.Message"/>
+  <mapping resource="com/isamm/linkedin/beans/Message.hbm.xml"/>
+  <mapping class="com.isamm.linkedin.beans.Publication"/>
+  <mapping resource="com/isamm/linkedin/beans/Publication.hbm.xml"/>
+  <mapping class="com.isamm.linkedin.beans.Users"/>
+  <mapping resource="com/isamm/linkedin/beans/Users.hbm.xml"/>
+
+
+</session-factory>
+</hibernate-configuration>

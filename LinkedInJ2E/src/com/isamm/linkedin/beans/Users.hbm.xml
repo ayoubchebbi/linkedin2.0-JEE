@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.isamm.linkedin.beans.Users" table="users" schema="jee">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="email">
+            <column name="email" sql-type="varchar(200)" length="200"/>
+        </property>
+        <property name="password">
+            <column name="password" sql-type="varchar(200)" length="200"/>
+        </property>
+        <property name="firstName">
+            <column name="first_name" sql-type="varchar(200)" length="200"/>
+        </property>
+        <property name="lastName">
+            <column name="last_name" sql-type="varchar(200)" length="200"/>
+        </property>
+        <property name="phone">
+            <column name="phone" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="birthDate">
+            <column name="birth_date" sql-type="date" not-null="true"/>
+        </property>
+        <property name="sex">
+            <column name="sex" sql-type="varchar(200)" length="200" not-null="true"/>
+        </property>
+        <property name="post">
+            <column name="post" sql-type="varchar(150)" length="150"/>
+        </property>
+        <property name="recruiter">
+            <column name="recruiter" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>

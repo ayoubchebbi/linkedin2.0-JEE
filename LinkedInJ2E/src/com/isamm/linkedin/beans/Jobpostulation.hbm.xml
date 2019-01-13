@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.isamm.linkedin.beans.Jobpostulation" table="jobpostulation" schema="jee">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <property name="idjob">
+            <column name="idjob" sql-type="int(11)"/>
+        </property>
+        <property name="iduser">
+            <column name="iduser" sql-type="int(11)"/>
+        </property>
+    </class>
+</hibernate-mapping>
